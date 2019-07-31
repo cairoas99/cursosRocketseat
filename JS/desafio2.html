@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Curso JS - Desafio 2</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <input type="text" name="nome" id="nome">
+      <button onClick="adicionar()">Adicionar</button>
+      <ul id="ex3"></ul>
+
+      <button id="d1">adicionar quadrado</button>
+      
+
+    </div>
+    <script>
+      /*Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+      vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+      aparecer na tela.*/
+      var nquad = 0;
+      var desafio1 = document.getElementById('d1');
+      desafio1.onclick = function(){
+        var quadrado = document.createElement('div')
+        quadrado.setAttribute('class', 'quad')
+        quadrado.style.width = 100;
+        quadrado.style.height = 100;
+        quadrado.style.backgroundColor = '#999999';
+        quadrado.style.border = 'solid #000';
+        document.getElementById('app').appendChild(quadrado);
+        quadra = document.getElementsByClassName('quad')[nquad];
+        console.log(quadra);
+        quadra.onmouseover = function(){
+          this.style.backgroundColor = getRandomColor();
+        }
+        nquad++;
+      }
+      /*Utilizando o resultado do primeiro desafio, toda vez que o usuário passar 
+      o mouse por cima de algum quadrado troque sua cor para uma cor aleatória 
+      gerada pela função abaixo:*/
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }     
+      /*A partir do seguinte vetor:*/
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+      /*Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+      ● Diego
+      ● Gabriel
+      ● Lucas*/
+      for (var i = 0; i < nomes.length; i++){
+        adcNome(nomes[i]);
+      };
+
+      function adcNome(vNome){
+        var pessoa= document.createElement('li');
+        var nome = document.createTextNode(vNome);
+        pessoa.appendChild(nome);
+        var lista = document.getElementsByTagName('ul')[0];
+        var itens = document.getElementsByTagName('li');
+        lista.insertBefore(pessoa, itens[itens.length]);
+      }
+
+      function adicionar(){
+        var novo = document.getElementById('nome');
+        adcNome(nome.value);
+      }
+
+    </script>
+  </body>
+</html>
