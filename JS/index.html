@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Curso JS</title>
+  </head>
+  <body>
+
+    <script>
+      //EX01
+      var endereco = {
+          rua: "Rua dos pinheiros",
+          numero: 1293,
+          bairro: "Centro",
+          cidade: "São Paulo",
+          uf: "SP"
+      };
+
+      console.log('Exercicio 1: O usuário mora em ', endereco.cidade, '-', endereco.uf, ' no bairro ' , 
+      endereco.bairro, ', na rua "', endereco.rua, '" com nº ', endereco.numero);
+
+      //EX02
+      function pares(x, y){
+        var par = [];
+        for (;x <= y; x++) {
+          if(x % 2 == 0){
+            par.push(x);
+          }
+        };
+        console.log('Exercicio 2: Pares: ', par);
+      };
+
+      pares(10, 50);
+
+      //EX03
+      function temHabilidade(skills) {
+
+        var ret = (skills.indexOf('Javascript'))? true: false;
+
+        console.log(ret);
+      };
+      var skills = ["Javascript", "ReactJS", "React Native"];
+      temHabilidade(skills); // true ou false
+
+      //EX04
+      function experiencia(anos) {
+        switch(anos){
+          case 0 <= 1:
+            console.log('Iniciante');
+          case 1 >= 3:
+            console.log('Intermediário');
+          case 3 >= 6:
+            console.log('Avançado');
+          default:
+            console.log('Jedi Master');
+        };
+      };
+      var anosEstudo = 7;
+      experiencia(anosEstudo);
+      // De 0-1 ano: Iniciante
+      // De 1-3 anos: Intermediário
+      // De 3-6 anos: Avançado
+      // De 7 acima: Jedi Master
+
+    </script>
+  </body>
+</html>

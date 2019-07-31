@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Curso JS</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" name="nome" class="nome" id="nome"/>
+      <button class="botao">Adicionar</button>
+    </div>
+
+    <script>
+      //var inputElement = document.getElementsByClassName('nome');//vetor com todos que tem essa class
+      //var inputElement2 = document.querySelector('div#app input');//1o elemento
+      //var inputElement2 = document.querySelector('input[name=nome]');
+      //var inputElement2 = document.querySelector('input');
+      //var inputElement2 = document.querySelectorAll('input');//todos
+
+      var inputElement = document.querySelector('input[name=nome]');//todos
+      var btnElement = document.querySelector('button.botao');
+
+      btnElement.onclick = function() {
+        var text = inputElement.value;
+        alert(text);
+      }
+
+    </script>
+  </body>
+</html>
