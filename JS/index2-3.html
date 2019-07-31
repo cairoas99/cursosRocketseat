@@ -5,25 +5,22 @@
   </head>
   <body>
     <div id="app">
-      <input type="text" name="nome" class="nome" id="nome"/>
-      <button class="botao">Adicionar</button>
+      <input id="nome">
     </div>
 
     <script>
-      //var inputElement = document.getElementsByClassName('nome');//vetor com todos que tem essa class
-      //var inputElement2 = document.querySelector('div#app input');//1o elemento
-      //var inputElement2 = document.querySelector('input[name=nome]');
-      //var inputElement2 = document.querySelector('input');
-      //var inputElement2 = document.querySelectorAll('input');//todos
+      var linkElement = document.createElement('a');
+      linkElement.setAttribute('href', 'https://google.com');
+      linkElement.setAttribute('title', 'site do google');
 
-      var inputElement = document.querySelector('input[name=nome]');//todos
-      var btnElement = document.querySelector('button.botao');
+      var textElement = document.createTextNode('Acessar google');
+      linkElement.appendChild(textElement);
 
-      btnElement.onclick = function() {
-        var text = inputElement.value;
-        alert(text);
-      }
+      var containerElement = document.querySelector('#app');
+      containerElement.appendChild(linkElement);
 
+      var inputElement = document.querySelector('#nome');
+      //containerElement.removeChild(inputElement);
     </script>
   </body>
 </html>
